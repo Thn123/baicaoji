@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" href="css/youhuiquan.css" rel="stylesheet" />
+<title>我的优惠券</title>
+
+</head>
+
+<body class="bgcolor">
+
+<div class="quan-content-box quan-content">
+ 
+   <div class="quanma">
+       <h3>上海佰草集化妆品有限公司</h3>
+       
+       <div class="quanTxt">
+          <strong>面膜兑换券</strong>
+          <p>7590-4874-3429</p>
+       </div>
+       
+      <div class="acc-login-input">
+        <ul>
+            <li><p><strong>消费门店</strong><span><input name="mendian" type="text" placeholder="所在门店" class="txt" value="尚浦中心"></span></p></li>
+            <li><p><strong>验证码</strong><span><input name="code" type="tel" placeholder="询问门店或由店员输入" maxlength="6" class="txt"></span></p></li>
+        </ul>  
+</div>
+    <div class="submitPad"><div class="submitBtn opacityBtn">确认试用</div></div>
+   </div>
+   
+    
+ 
+</div>   
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+var tipsflag=true;
+function tips(text){
+	if(tipsflag==true){
+		var tishiDiv=document.createElement('div');
+		tishiDiv.className="motify"; 
+		document.body.appendChild(tishiDiv);
+		tipsflag=false;
+	 }
+	$('.motify').html(text).show();
+	setTimeout(function(){$('.motify').fadeOut();},500);
+}
+
+var flaglogin=true;
+$("input[name=code]").bind('input propertychange',function(){
+    $('.submitBtn').removeClass('opacityBtn');
+	$(".submitBtn").click(function(){	
+	 var mendian=$('input[name=mendian]').val()
+	 var codeMa=$('input[name=code]').val()
+	   if(mendian!='' && codeMa!=''){
+		   if(flaglogin==true){ 
+			  tips("确认成功"); 
+			  flaglogin=false; 
+		   }
+	   }else{
+	     tips("请输入正确的信息");  
+	  }
+	})
+});
+
+</script>
+ 

@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" href="css/admin.css" rel="stylesheet" />
+<title>编辑个人信息</title>
+</head>
+
+<body>
+<div class="baicaojiMenber otherBox">
+   <ul>
+     <li><span class="imgbox"><em id="touxiangImg"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=523024675,1399288021&fm=117&gp=0.jpg"></em>
+     
+      </span>
+      <strong>头像</strong></li>
+      
+      <li><span><input name="Sname" type="text" class="txt" readonly placeholder="请输入昵称" value="萌萌"></span><strong>昵称</strong></li>
+      <li><span><input name="Sname" type="text" class="txt" placeholder="请输入您的姓名" value="张晓萌"></span><strong>姓名</strong></li>
+      <li><span><select class="dropdown-select"><option value="先生">女</option><option>男</option></select></span><strong>性别</strong></li>
+      <li><p><span id="changePhone">13876262653</span><strong>手机号</strong></p></li>
+      <li><p><span><input name="Sname" type="text" class="txt" placeholder="请输入常用地址" value="上海市卢湾区打浦桥路88号"></span><strong>地址</strong></p></li>
+       <li><p><span id="changePass">25678</span><strong>兑换密码</strong></p></li>
+   </ul>
+</div>
+<div class="baicaojiMenber">
+   <ul>      
+       <li><p><bdo>请选择您的生日</bdo><span class="dateinput"><input name="dateInput" type="text" readonly class="txt" placeholder="请选择您的生日" value="1990-12-20"></span><strong>生日</strong></p></li>
+         <li><span><select class="dropdown-select" disabled><option>注册会员</option><option value="注册会员">注册会员</option></select></span><strong>会员等级</strong></li>
+         <li><span><select class="dropdown-select" disabled><option>微信虚拟门店</option><option>微信虚拟门店</option><option>中山公园门店</option></select></span><strong>门店</strong></li>
+   </ul>
+</div>
+
+<div class="paybtnbg">
+   <div class="paybtn">确认</div>
+</div>
+
+
+
+
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+
+
+
+var patrn=/^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[0-9])[0-9]{8}$/;
+var tipsflag=true;
+function tips(text){
+	if(tipsflag==true){
+		var tishiDiv=document.createElement('div');
+		tishiDiv.className="motify"; 
+		document.body.appendChild(tishiDiv);
+		tipsflag=false;
+	 }
+	$('.motify').html(text).show();
+	setTimeout(function(){$('.motify').fadeOut();},500);
+}
+
+var num=60;	
+var timerrr;
+var flag=true,flaglogin=true;	
+var loginflag=true,docHeight;
+window.onscroll=function(){docHeight=$(window).scrollTop();}
+function loginGo(layout,id){
+	 //setCookie('screenid',docHeight);
+	 document.documentElement.style.position=document.body.style.position='relative';
+     document.documentElement.style.overflow=document.body.style.overflow='hidden';
+	 document.documentElement.style.height=document.body.style.height=$(window).height()+'px';
+	 if(loginflag==true){
+		var loginDiv=document.createElement('div');
+		loginDiv.id="loginBox"; 
+		document.body.appendChild(loginDiv);
+		loginflag=false;
+	 }
+	 document.getElementById('loginBox').innerHTML=layout;
+	 $('.maskbg').addClass('bgdong');
+	 $('.login-lrlz-box').show();;
+}
+
+function closedLogin(){
+	  $('.login-lrlz-box').hide();
+	 setTimeout(function(){
+		$('#tanceng').remove();
+		clearInterval(timerrr);
+		flag=true;
+		flaglogin=true;
+	  },1)
+	  document.documentElement.style.position=document.body.style.position='static';
+	  document.documentElement.style.overflow=document.body.style.overflow='';
+	  document.documentElement.style.height=document.body.style.height='';
+}
+function boda(){
+	var phone='<div id="tanceng"><div class="layoutMaskbg" onClick="javascript:closedLogin();" style="z-index:999980;"></div>\
+		<div class="login-lrlz-box">\
+			<h2>修改手机号码</h2>\
+			<div class="login-lrlz-input">\
+			  <div class="acc-login-input">\
+    <ul class="inputCss">\
+        <li><p><span><input name="phone" type="tel" placeholder="输入你的手机号" maxlength="11" class="txt"></span></p></li>\
+        <li><p><span><input name="code" type="tel" placeholder="填写短信验证码" maxlength="6" class="txt" style="width:60%; float:left;"><bdo class="yanzhengma opacityBtn" id="timeid">获取验证码</bdo></span></p></li>\
+    </ul>\
+			</div></div>\
+		<div class="login-lrlz-btn"><ol><span class="quxiaobtn" onClick="javascript:closedLogin();">取消</span></ol><ol><span class="subbtn opacityBtn">确认</span></ol></div>\
+	</div></div>';
+  return phone;
+}
+
+
+function passWord(){
+	var phone='<div id="tanceng"><div class="layoutMaskbg" onClick="javascript:closedLogin();" style="z-index:999980;"></div>\
+		<div class="login-lrlz-box">\
+			<h2>修改兑礼码</h2>\
+			<div class="login-lrlz-input">\
+			  <div class="acc-login-input">\
+    <ul class="inputCss">\
+        <li><p><span><input name="codepassword" type="tel" placeholder="新兑礼密码" maxlength="6" class="txt"></span></p></li>\
+		 <li><p><span><input name="quepassword" type="tel" placeholder="确认新兑礼密码" maxlength="6" class="txt"></span></p></li>\
+    </ul>\
+			</div></div>\
+		<div class="login-lrlz-btn"><ol><span class="quxiaobtn" onClick="javascript:closedLogin();">取消</span></ol><ol><span class="subbtn opacityBtn">确认</span></ol></div>\
+	</div></div>';
+  return phone;
+}
+
+
+function dao(){
+	if(num>0){
+	     num-=1;
+	    document.getElementById('timeid').innerHTML=num;
+	    if(num<10){
+		document.getElementById('timeid').innerHTML="0"+num;
+		}
+	}
+	if(num==0){
+		document.getElementById('timeid').innerHTML="获取验证码";
+		num=60;	
+		document.getElementById('timeid').className='yanzhengma';
+		flag=true;
+		clearInterval(timerrr);
+	}
+	
+}	
+function isPhone(phone){
+	var myreg = /^0?(13[0-9]|15[0-9]|17[0-9]|18[0-9]|14[0-9])[0-9]{8}$/;;
+	if(!myreg.test(phone)) return false;
+	return true;
+}
+
+$(function(){
+
+if($('input[name=dateInput]').val()){
+   $('input[name=dateInput]').parent().parent().find('bdo').hide();
+}
+	$('input[name=dateInput]').on('click',function(){
+	  $(this).parent().parent().find('bdo').hide();
+	})
+	
+	$('#changePhone').on('click',function(){
+		loginGo(boda());
+	    
+		
+	$("input[name=phone]").bind('input propertychange',function(){
+    $('#timeid').removeClass('opacityBtn');
+	$("#timeid").click(function(){	
+    var phone=$('input[name=phone]').val()
+	if(phone!=''){
+		if(isPhone(phone)){
+			if(flag==true){
+			   document.getElementById('timeid').className='yanzhenghui';
+			   dao();
+				timerrr=setInterval('dao()',1000);
+				tips("验证码已发送");
+			    flag=false;
+			}
+	    }else{
+			tips("请输入正确的手机号码");  
+		}
+	}else{
+	  	tips("请输入手机号码");  
+	}
+})
+});
+
+$("input[name=code]").bind('input propertychange',function(){
+    $('.subbtn').removeClass('opacityBtn');
+	$(".subbtn").click(function(){	
+	 var phone=$('input[name=phone]').val()
+	 if(isPhone(phone)){
+	   if(flaglogin==true){
+		  flaglogin=false;
+		  tips("修改成功");  
+		  closedLogin();
+	   }
+	   }else{
+	     tips("请输入正确的手机号码");  
+	  }
+	})
+});
+			
+    })
+		
+		
+		
+		
+$('#changePass').on('click',function(){
+		loginGo(passWord());
+		$("input[name=quepassword]").bind('input propertychange',function(){
+           $('.subbtn').removeClass('opacityBtn');
+		   
+		   $(".subbtn").click(function(){	
+			 var codepassword=$('input[name=codepassword]').val()
+			 var quepassword=$('input[name=quepassword]').val()
+			 if(codepassword==quepassword){
+			   if(flaglogin==true){
+				  flaglogin=false;
+				  tips("修改成功");  
+				  closedLogin();
+			   }
+			   }else{
+				 tips("亲，您两次输入的兑换密码不一致");  
+			  }
+			})
+		   
+		})
+})
+  
+  
+})
+
+</script>
+ 

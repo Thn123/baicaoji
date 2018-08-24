@@ -1,0 +1,65 @@
+@charset "utf-8";
+*{ margin:0; padding:0;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0; list-style-type:none;-webkit-user-select:none;-webkit-text-size-adjust:none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;clear:both;}
+html{font-family:"Microsoft YaHei","Helvetica Neue","Helvetica","Roboto","STHeiTi","Arial","sans-serif";-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:62.5%;line-height:1.5;}
+body{font-size:13px;overflow-x:hidden;min-width:320px;color:#666;background:#fff;}
+a{text-decoration:none;color:#666;}a:active{color:#b71c1c;outline:0;}
+
+.motify{position:fixed;top:35%;left:50%;width:220px;padding:0.5em;margin:0 0 0 -110px;z-index:999999;font-size:12px;background:rgba(0,0,0,0.8);color:#fff;line-height:2em;border-radius:6px;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0,0,0,.2); text-align:center; display:none;}
+.motify p{ line-height:2em; text-align:center; font-size:12px; color:#fff;}
+
+.header{width:100%; background:#151515; height:44px; display:block; position:fixed; left:0; top:0; right:0; z-index:999;}
+.header span{ float:left; width:15%; height:44px; text-align:center; display:block;}
+.header h2{float:left; text-align:center; width:70%; line-height:44px; color:#fff; font-size: 1.3em; float:left; font-family:Arial, Helvetica, sans-serif; font-weight:normal;font-family:"\5FAE\8F6F\96C5\9ED1";}
+
+.content-index{ padding-top:44px; display:block;}
+.content-bottom{display:block; padding-bottom:50px;}
+
+.sosoBox{ line-height:30px; height:30px; display:block; padding:7px; overflow:hidden; border-bottom:1px solid #eee; background:#f3f3f3;}
+.sosoBox .txt{ width:99%; height:30px; border:none; background:url(../images/soso.png) no-repeat 10px center #fff; background-size:18px; border-radius:35px; -webkit-appearance:none;color:#666; line-height:30px; display:block; text-indent:35px; font-size:1.4rem; overflow:hidden;}
+
+
+
+.webchat{ display:block; overflow:hidden; max-width:75rem; margin:0 auto;}
+.webchat ul li{ border-bottom:1px solid #eee; padding:5px 10px; overflow:hidden;}
+.imgbox{float:left; width:20%; display:block; position:relative;}
+.imgbox em{ position:absolute; left:-6px; top:0px; width:10px; height:10px; background:#7cb342; border-radius:10px; z-index:9;border:2px solid #fff;}
+.imgbox em.hui{ background:#d7d7d7;}
+.imgbox img{ width:100%; width:50px; height:50px; border-radius:5px; margin:5px auto; border:1px solid #eee; background:#f7f7f7;}
+.nameBox{float:right; width:80%; height:auto; height:50px; background:url(../images/jiantouRight.png) no-repeat right center; background-size:10px 17px;}
+.nameBox p{ line-height:30px; font-size:16px; color:#333; text-align:left;}
+.nameBox p.liaoinfo{ font-size:12px; color:#999;}
+.nameBox p strong{ font-family:Arial, Helvetica, sans-serif;}
+.nameBox p bdo{ font-size:1.2rem; color:#999; font-family:Arial, Helvetica, sans-serif; margin-left:10px;}
+.nameBox p bdo.huoyue{ background:#b71c1c;line-height:20px; font-size:12px; color:#fff; padding:2px 10px; border-radius:5px;}
+.telicon{ float:right; width:80px; text-align:right; height:20px;  display:block; margin-top:5px; font-size:12px; color:#999;}
+
+
+
+.footerbar{width:100%; height:40px; background:rgba(242,242,242,1); border-top:1px solid #eee; position:fixed; bottom:0; left:0; right:0; display:block; padding:4px 0; z-index:9999;max-width:75rem; margin:0 auto;}
+.footerbar ul li{float:left; width:25%; display:block; text-align:center;}
+.footerbar ul li span{ display:block; font-weight:normal;}
+.home{background:url(../images/liaotian01.png) no-repeat center 2px; padding-top:26px; height:14px; display:block; background-size:21px 19px; font-size:12px; color:#999;}
+.homehui{background:url(../images/liaotian02.png) no-repeat center 2px; padding-top:26px; height:14px; display:block; background-size:21px 19px; font-size:12px; color:#333;}
+.guke{background:url(../images/guke01.png) no-repeat center 2px; padding-top:26px; height:14px; display:block; background-size:22px; font-size:12px; color:#999;}
+.gukehui{background:url(../images/guke02.png) no-repeat center 2px; padding-top:26px; height:14px; display:block; background-size:22px; font-size:12px; color:#333;}
+.admin{background:url(../images/wo01.png) no-repeat center 3px; padding-top:26px; height:14px; display:block; background-size:20px; font-size:12px; color:#999;}
+.adminhui{background:url(../images/wo02.png) no-repeat center 3px; padding-top:26px; height:14px; display:block; background-size:20px; font-size:12px; color:#333;}
+.renwu{background:url(../images/renwu01.png) no-repeat center 2px; padding-top:26px; height:14px; display:block; background-size:22px; font-size:12px; color:#999;}
+.renwuhui{background:url(../images/renwu02.png) no-repeat center 2px; padding-top:26px; height:14px; display:block; background-size:22px; font-size:12px; color:#333;}
+
+
+.shopbanner{ width:100%; display:block; overflow:hidden; margin-bottom:10px;}
+.shopbanner img{ width:100%; display:block;}
+
+.shopDian{ padding:10px; display:block;}
+.shopDian h2{ height:30px; color:#333; font-size:14px;}
+.shopDian ul li{ padding:10px 0; border-bottom:1px solid #eee; overflow:hidden; position:relative;}
+.shopDian ul li p{ line-height:30px; font-size:12px; color:#999;}
+.shopDian ul li p img{ float:left; width:70px; height:70px; margin-right:10px;}
+.shopDian ul li strong{ display:block; font-size:14px; color:#333; padding-bottom:10px; line-height:normal;}
+.shopDian ul li span{ display:block; line-height:20px;}
+.shopDian ul li span.address{ padding-left:100px; background:url(../images/weizhi.png) no-repeat 80px center; background-size:12px; display:block;}
+.shopDian ul li span.tel{ padding-left:100px; background:url(../images/tel.png) no-repeat 80px center; background-size:12px;display:block;}
+.sendBtn{ position:absolute; right:0px; bottom:10px; width:70px; height:30px; border:1px solid #daba82; border-radius:30px; color:#333; font-size:14px; text-align:center; line-height:30px;}

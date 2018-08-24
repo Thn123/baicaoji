@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/mobileSelect.css"/>
+    <link type="text/css" href="reg.css" rel="stylesheet" />
+    <title>华美家门店地图</title>
+    <style>
+        #c_city{
+            margin:10px;
+            width: 100%;
+            height: 40px;
+            border:1px solid #ddd;
+        }
+        #s_city{
+            display:inline-block;
+        }
+        .mendianAddress ol img.map_icon{
+            width: 16px;
+            height: 19px;
+            vertical-align: middle;
+            padding-right: 3px;
+            margin-top: -5px;
+        }
+
+        .mendianAddress ol img.up_icon{
+            width: 12px;
+            height: 7px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="mendianAddress maptwo">
+    <ol style="width:16%;float:right"><bdo class="dianlieIcon">展开</bdo></ol>
+    <ol>
+       <span class="">
+           <img  src="images/map.png" class="map_icon"/>
+           <div class="dropdown-select2" id="s_city" name="s_city">上海
+           </div>
+            <img src="images/up.png" class="up_icon">
+       </span>
+    </ol>
+</div>
+
+</body>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MpW2GCV1IVTax54FvODYh8XjO405KFxL"></script>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/mobileSelect.js"></script>
+
+<script>
+    $('#s_city').click(function(){
+             $('.up_icon').attr("src",'images/down.png')
+    });
+
+    var CitySelect = new MobileSelect({
+        trigger:'#s_city',
+        title:'选择城市',
+        wheels:[
+            {
+                data: [
+                    {
+                        CITY_CODE:"",
+                        CITY_NAME:""
+                    }
+                ]
+            }
+        ],
+        keyMap:{ id: "CITY_CODE", value: 'CITY_NAME'},
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function (indexArr, data) {
+
+        },
+        callback: function (indexArr, data) {
+            $('.up_icon').attr("src",'images/up.png');
+           console.log(data,indexArr);
+            var la=data[0].LATITUDE;//维度；
+            var lo=data[0].LONGITUDE;//经度；
+            var  citycode=data[0].CITY_CODE;//当前城市的code;
+            console.log(la,lo,citycode);
+        }
+    });
+    CitySelect.updateWheel(0,[
+        {ID: 418, CITY_CODE: "000001", CITY_NAME: "北方地区", LATITUDE: "无", LONGITUDE: "无", FullUpdate: false},
+        {ID: 419, CITY_CODE: "000002", CITY_NAME: "南方地区", LATITUDE: "无", LONGITUDE: "无", FullUpdate: false},
+        {ID: 421, CITY_CODE: "120100", CITY_NAME: "天津", LATITUDE: "39.0851", LONGITUDE: "117.19937",FullUpdate: false}]);
+</script>
+</html>

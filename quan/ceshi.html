@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" href="css/youhuiquan.css" rel="stylesheet" />
+<title>我的优惠券</title>
+</head>
+
+<body>
+  
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+$('.order-tag-item ol').on('click',function(){
+  $(this).addClass('curbtn').siblings().removeClass('curbtn');
+  $('.quan-content-Tabbox ol').hide();
+   $('.quan-content-Tabbox ol').eq($(this).index()).show();
+})
+</script>
+ 

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" href="css/admin.css" rel="stylesheet" />
+<title>我的档案</title>
+</head>
+
+<body>
+<div class="admin-index-banner">
+  <div class="admin-banner"><img src="images/bgbanner.jpg"/></div>
+  <div class="admin-info-person">
+    <p><span id="qrma"><img src="images/qrimg.png"></span><bdo class="imgbox"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=523024675,1399288021&fm=117&gp=0.jpg"></bdo> <strong>张晓萌 <em class="nvicon"></em></strong>
+      <bdo>18200000000</bdo>
+    </p>
+    
+   <!--  <p><span><img src="images/qrimg.png"></span><bdo class="imgbox"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=523024675,1399288021&fm=117&gp=0.jpg"></bdo> <strong>张晓萌 <em class="nanicon"></em></strong>
+      <bdo>18200000000</bdo>
+    </p>
+  -->
+  </div>
+</div>
+
+<div class="admin-tag">
+  <ol>
+    <strong>3<em>张</em></strong>
+    <p><span>优惠券</span></p>
+  </ol>
+  <ol>
+    <strong>300<em>分</em></strong>
+    <p><span>积分</span></p>
+  </ol>
+</div>
+<!--begin content-->
+<div class="admin-nav-items">
+ 
+  <ul> 
+    <li><a href="quan_list.html"><span class="icon01"></span>
+    <p><strong>个人信息</strong></p>
+    </a>
+    </li>
+    <li><a href="quan_lingqu.html"><span class="icon02"></span>
+    <p><strong>每日签到</strong></p></a>
+    </li>
+    <li><a href="quan_fen.html"><span class="icon03"></span>
+    <p><strong>积分兑礼</strong></p></a>
+    </li>
+    <li><span class="icon04"></span>
+    <p><strong>问卷调查</strong></p>
+    </li>
+    <li><span class="icon05"></span>
+    <p><strong>会员制度</strong></p>
+    </li>
+  
+  </ul> 
+</div>  
+<!--end content-->
+
+<div class="maskbg">
+  <div class="admin-qrmabox">
+     <div class="admin-qrmabox-title">
+        <div class="admin-qrmabox-tou"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=523024675,1399288021&fm=117&gp=0.jpg"></div>
+       <p>张晓萌 <em class="nvicon"></em> | 183736263535</p>
+     </div>
+     
+     <div class="admin-layer-ma">
+       <img src="images/ma.jpg">
+       <p>会员二维码</p>
+     </div>
+     
+      <div class="admin-layer-tiaoma">
+       <img src="images/tiaoxingma.jpg">
+       <p>1243 2432 6543 7645 8798 765</p>
+     </div>
+  </div>
+  <div class="delIcon"></div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+
+ $(function(){
+	  
+    $("#qrma").on('click',function(){
+		$('.maskbg').show();
+	})
+	
+	$(".delIcon").on('click',function(){
+		$('.maskbg').hide();
+	})
+  }); 
+</script>
+ 

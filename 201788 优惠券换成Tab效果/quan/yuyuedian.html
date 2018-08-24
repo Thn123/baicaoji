@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" href="css/youhuiquan.css" rel="stylesheet" />
+<title>养美预约</title>
+
+</head>
+
+<body class="dianbg">
+<div class="acc-login-input dian-order-input">
+    <h2>预约佰草集精品点服务</h2>
+    <ul>
+        <li><p><strong>姓 &nbsp;&nbsp; 名</strong><span><input name="name" type="tel" placeholder="输入您的姓名" maxlength="30" class="txt" value="张萌萌"></span></p></li>
+        <li><p><strong>手机号</strong><span><input name="phone" type="tel" placeholder="输入您的手机号码" maxlength="11" class="txt" value="138 8823 3233"></span></p></li>
+    </ul>
+    </div>
+ 
+<div class="acc-login-input dian-order-input">
+    <h2>选中预约门店信息</h2>
+    <ul>
+        <li><p style="margin-bottom:0;"><bdo><select class="dropdown-select" id="s_province" name="s_province"><option>省份</option></select></bdo><bdo style="float:right;"><select class="dropdown-select" id="s_city" name="s_city"><option>城市</option></select><select style="display:none;" id="s_county" name="s_county"><option>省份</option></select></bdo></p></li>
+        <li><p><select class="dropdown-select"><option>选择精品店</option></select></p></li>
+         <li><p class="dateShuru"><em>选择日期</em><input name="dates" type="date" placeholder="选择日期" maxlength="30" class="txt dateinput" ></p></li>
+          <li><p><select class="dropdown-select"><option>选择时间</option></select></p></li>
+    </ul>
+    </div>
+ <div class="dian-order-input"><div class="submitBtn">提交预约</div>
+   <p class="yuyuechaxun"><a href="yuyue.html" class="yelllow">预约查询</a></p>
+ </div>
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="../reg/js/city.js" class="resources library" type="text/javascript"></script>
+<script>
+_init_area();
+</script>
+<script>
+$('input[name=dates]').on('click',function(){
+  $(this).parent().find('em').hide();
+})
+
+</script>
+ 

@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小陌在线</title>
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" rel="stylesheet" href="css/wechat.css" />
+</head>
+
+<body class="bgclass">
+
+
+<div class="talkBox" style="overflow-y:scroll; overflow-x:hidden; padding:0 10px;">
+  <ul id="imglist">
+     <li><p class="timeInfo">周一 上午10:28</p></li>
+     <li>
+     <div class="talkLeft talkImg"><img src="https://ss0.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3048181262,1486154170&fm=21&gp=0.jpg" width="60" height="60"></div>
+     <div class="talkLeft talkTxt">请问你有神马事情吗？
+       <div class="leftjiao"></div>
+     </div>
+     </li>
+      <li><p class="timeInfo">周一 上午10:32</p></li>
+      <li>
+     <div class="talkRight talkImg"><img src="https://ss0.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3048181262,1486154170&fm=21&gp=0.jpg" width="60" height="60"></div>
+     <div class="talkRight talkTxt talkTxtRR">在,亲
+       <div class="rightjiao"></div>
+     </div>
+     </li>
+    
+     <li>
+     <div class="talkRight talkImg"><img src="https://ss0.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3048181262,1486154170&fm=21&gp=0.jpg" width="60" height="60"></div>
+     <div class="talkRight talkTxt talkTxtRR"><p>我想要根本你聊点事情？</p>
+       <div class="rightjiao"></div>
+     </div>
+     </li>
+  </ul>  
+  <div class="bottom"></div>
+</div>
+
+<div class="toolbar" style="position:static;">
+ 
+   <div class="txtBox"><input name="wenben" type="text" class="shurutxt" placeholder="点击输入消息..."></div>
+   <div class="uploadimg"><div class="submitbtn">发送</div></div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/localResizeIMG.js"></script>
+<script type="text/javascript" src="js/mobileBUGFix.mini.js"></script>
+
+<script type="text/javascript">
+var oHeight = $(document).height(); //浏览器当前的高度
+ 
+ $(window).resize(function(){
+        if($(document).height() < oHeight){
+        $(".toolbar").css("position","static");
+    }else{ 
+        $(".toolbar").css("position","absolute");
+    }
+});
+
+
+(function () {
+        var viewImg = $("#imglist");
+        var imgurl = '';
+        var imgcount = 0;
+        $('#upload_image').localResizeIMG({
+            width: 480,
+            quality: 0.8,
+            success: function (result) {
+                var status = true;
+                if (result.height > 1600) {
+                    status = false;
+                    alert("照片最大高度不超过1600像素");
+                }
+                
+                if (status) {
+                    viewImg.append('<li></li>');
+                    viewImg.find("li:last-child").html('<li><div class="talkRight talkImg"><img src="https://ss0.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3048181262,1486154170&fm=21&gp=0.jpg" width="60" height="60"></div><div class="talkRight talkTxt talkTxtRR"><img src="' + result.base64 + '"/><div class="rightjiao"></div></div></li><input type="hidden" id="file'
+                    + '" name="fileup[]" value="'
+                    + result.clearBase64 + '">');
+
+                }
+				$('.talkBox').animate({scrollTop:$('#imglist').height()}, 800);
+            }
+        });
+		
+    })();
+	
+window.onload=function(){
+	var hct=parseInt($(window).height())-50;
+    $('.talkBox').css({"height":hct+'px'});
+	$('.talkBox').animate({scrollTop:$('#imglist').height()}, 800);
+	
+	$('.submitbtn').on('click',function(){
+		
+		 var zhi=$('.shurutxt').val();
+		if(zhi!=""){
+			var viewImg2 = $("#imglist");
+		    viewImg2.append('<li><div class="talkRight talkImg"><img src="https://ss0.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3048181262,1486154170&fm=21&gp=0.jpg" width="60" height="60"></div><div class="talkRight talkTxt talkTxtRR">'+zhi+'<div class="rightjiao"></div></div></li>');
+			$('.talkBox').animate({scrollTop:$('#imglist').height()}, 800);
+			$(".shurutxt").val("");
+			}else{
+				tips("请输入对话内容");
+				}	
+		})
+}
+
+
+
+</script>

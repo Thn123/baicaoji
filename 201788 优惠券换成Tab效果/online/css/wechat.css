@@ -1,0 +1,34 @@
+@charset "utf-8";
+*{ margin:0; padding:0;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0; list-style-type:none;-webkit-user-select:none;-webkit-text-size-adjust:none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;clear:both;}
+html{font-family:"Microsoft YaHei","Helvetica Neue","Helvetica","Roboto","STHeiTi","Arial","sans-serif";-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:62.5%;line-height:1.5;}
+body{font-size:13px;overflow-x:hidden;min-width:320px;color:#666;background:#fff;}
+a{text-decoration:none;color:#666;}a:active{color:#b71c1c;outline:0;}
+
+.bgclass{ background:#f5f5f7;}
+
+.talkBox{ padding:50px 10px;text-align:left; display:block; max-width:75rem; margin:0 auto;}
+.talkBox ul li{ padding:15px 0; overflow:hidden; display:block; overflow:hidden;}
+.talkBox ul li p.timeInfo{ font-size:12px; height:12px; text-align:center; display:block; color:#bbb;}
+.talkLeft{ float:left;margin-right:20px;} .talkRight{ float:right; margin-left:20px;}
+.talkBox .talkImg{ width:40px; height:40px; background:url(../images/ren.png) no-repeat center center #eee; background-size:30px;border-radius:40px;}
+.talkBox .talkImg img{ width:40px; height:40px; border-radius:40px;}
+.talkBox .talkTxt{ border:1px solid #eee; max-width:50%; background:#fff; border-radius:12px; padding:8px; display:block; line-height:22px; font-size:12px; color:#333; position:relative;}
+.talkBox .talkTxt .leftjiao{width: 0;height: 0;border-top: 5px solid transparent;border-right: 10px solid #fff; border-bottom: 5px solid transparent; position:absolute; left:-10px; top:18px; display:block;}
+.talkBox .talkTxt .rightjiao{width: 0;height: 0;border-top: 5px solid transparent;border-left: 10px solid #1D5632; border-bottom: 5px solid transparent; position:absolute; right:-8px; top:18px; display:block;}
+.talkBox .talkTxt img{ width:100%; display:block;}
+.talkBox .talkTxtRR{ background:#1D5632; color:#fff;}
+
+.toolbar{ width:100%; background:#f7f7f7; height:49px; display:block; overflow:hidden; position:fixed; left:0; right:0; bottom:0; z-index:99999999; border-top:1px solid #ededed; max-width:75rem; margin:0 auto;}
+.uploadimg{ float:left; width:15%; height:50px; display:block;overflow:hidden;}
+.txtBox{ float:left; width:85%; height:49px;display:block; overflow:hidden;}
+.shurutxt{ border:none; height:38px; width:95%; -webkit-appearance:none;appearance:none; margin:5px;border-radius:5px; text-indent:10px; font-size:16px;}
+.submitbtn{ -webkit-appearance:none;appearance:none; border:none; background:#1D5632; margin:5px auto; display:block; text-align:center; height:38px; line-height:38px; width:92%; color:#fff;font-size:16px; border-radius:5px;}
+.upload_btn {background:url(../images/photo.png) center center no-repeat #fff;background-size:20px; overflow:hidden; position:relative;width: 30px;height: 30px; border-radius:30px; margin:10px auto;}
+.upload_btn input {opacity: 0;position: absolute;left: 0;top: 0;z-index: 10;overflow: hidden;height:30px;width:30px; }
+
+.file_btn {background:url(../images/file.png) center center no-repeat #fff;background-size:20px; overflow:hidden;width:30px;height:30px; margin:10px auto;}
+.duihua_btn {background:url(../images/duihua.png) center center no-repeat #fff;background-size:20px; overflow:hidden;width:30px;height:30px; margin:10px auto;}
+.biaoqing_btn {background:url(../images/biaoqing.png) center center no-repeat #fff;background-size:20px; overflow:hidden;width:30px;height:30px; margin:10px auto;}
+.yuyin_btn {background:url(../images/yuyin.png) center center no-repeat #fff;background-size:20px; overflow:hidden;width:30px;height:30px; margin:10px auto;}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" /> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" />
+<link type="text/css" href="css/wenjuan.css" rel="stylesheet" />
+<title>调查问卷</title>
+</head>
+
+<body>
+<div class="yuyueProIndex">
+    <div class="page01">
+      <div class="yuyueContent">
+      <div class="yuyueChangpage1">
+          <div class="yueyueTitle">请问您的性别是？(单选)</div>
+          <div class="yuyueChang">
+             <ul>
+                <li data-value="男"><em></em><span>男性</span></li>
+                <li data-value="女"><em></em><span>女性</span></li>
+             </ul>
+          </div>
+      </div>
+      </div>
+      <div class="yuyueBtn">
+         <ol class="left huise"><div class="yuyueSubmit">上一题</ol>
+         <ol class="right"><div class="yuyueSubmit" id="rightBtn">下一题</ol>
+      </div>
+  </div>
+
+ <div class="page02">
+
+  <div class="yuyueContent">
+   <div class="yuyueChangpage1">
+       <div class="yueyueTitle">请问以下选项中，哪句话最能形容您对护肤品的看法？(单选)</div>
+      <div class="yuyueChang yuyuePrice">
+         <ul>
+            <li data-value="1"><em></em><span>护肤是我每天的必修课，我喜欢天然的护肤品，他们安全不刺激。我觉得国产品牌应该很适合国人的皮肤，而且也不贵。</span></li>
+            <li data-value="2"><em></em><span>护肤对我很重要，含有天然成分的护肤品安全有效最吸引我，我会话时间去研究他们的特点和功效，并选择最适合我的有口碑的品牌。</span></li>
+             <li data-value="3"><em></em><span>护肤太重要了，它可以帮助我展现自己、顺利地参加社交活动，相对来说天然的产品会让我感觉更安心，我喜欢大牌。</span></li>
+             <li data-value="4"><em></em><span>以上都不符</span></li>
+         </ul>
+      </div>
+     </div>
+  </div>
+  
+  
+   <div class="yuyueBtn">
+         <ol class="left"><div class="yuyueSubmit" id="leftBtn2">上一题</ol>
+         <ol class="right huise"><div class="yuyueSubmit" id="rightBtn2">下一题</ol>
+     </div>
+  
+  </div>
+ 
+</div>
+<!--<div class="maskbg">
+  <div class="tipsBox">
+  <h2>小宜温馨提示</h2>
+  <div class="beginBtnbox">
+   <p> 您的每一个答案对我们都很重要！您只要花1-3分钟来完成这个调研 <br/>
+1、会员完成问卷可获得100积分；<br/>
+2、随机抽取100名问卷参与者赠送价值119元的相宜本草百合高保湿修护眼霜；<br/>
+3、开放问题建议已经采纳，即可获得价值500元的相依本草大礼包一份哦！<br/>
+4、活动时间：2017年5月25日-6月8日<br/>
+完成本问卷之后留下有效联系方式，小宜将联系幸运获奖者，寄送幸运大礼包~
+「本活动所有解释权鬼上海相宜本草化妆品股份有限公司所有」</p>
+  <div class="beginBtn">确认</div></div>
+  </div>
+</div>-->
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"/></script>
+<script type="text/javascript">
+document.addEventListener('touchmove',function(event){event.preventDefault();},false);
+
+//信息提示
+var tipsflag=true;
+function tips(text){
+	if(tipsflag==true){
+		var tishiDiv=document.createElement('div');
+		tishiDiv.className="motify"; 
+		document.body.appendChild(tishiDiv);
+		tipsflag=false;
+	 }
+	$('.motify').html(text).show();
+	setTimeout(function(){$('.motify').fadeOut();},800);
+}
+
+$('.beginBtn').on('click',function(){
+	$('.maskbg').hide();
+})
+
+$('#rightBtn').on('click',function(){
+	if($('.yuyueChang ul li').hasClass('curbtn')){
+		$('.page01').removeClass('slideInDown2').addClass('slideInDown');
+		$('.page02').removeClass('slideInUp2').addClass('slideInUp');
+	}else{
+	 tips('亲,请先选择');
+	}
+})
+
+$('#leftBtn2').on('click',function(){
+	$('.page01').removeClass('slideInDown').addClass('slideInDown2');
+	$('.page02').removeClass('slideInUp').addClass('slideInUp2');
+})
+
+
+
+$('#rightBtn2').on('click',function(){
+	var dangzhi='',result=[];
+	if($('.yuyuePrice ul li').hasClass('curbtn')){
+		$('.yuyueChang ul li').each(function(index, element) {
+            if($(this).hasClass('curbtn')){
+			  dangzhi=$('.yuyueChang ul li').eq(index).attr('data-value');
+			  result.push( dangzhi);
+			  return;
+			}
+			
+        });
+	  tips('我选择了'+result);
+	}else{
+	  tips('亲,请先选择');
+	}
+})
+
+
+$('.yuyueChang ul li').on('click',function(){
+  $(this).addClass('curbtn curtab').siblings().removeClass('curbtn curtab');
+  
+})
+</script>
